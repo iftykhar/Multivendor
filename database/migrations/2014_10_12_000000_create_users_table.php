@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('roel',['admin','user','vendor','user_controller'])->default('user');
+            $table->enum('role',['admin','user','vendor','user_controller'])->default('user');
             $table->enum('status',['active','inactive'])->default('active');
             $table->string('password');
             $table->rememberToken();
