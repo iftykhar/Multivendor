@@ -38,7 +38,11 @@ Route::middleware('auth')->group(function () {
 /////////////
 Route::middleware('auth','role:admin')->group(function(){
     Route::get('admin/dashboard',[AdminController::class, 'index'])->name('admin.dashboard');
+    Route::post('admin/logout',[AdminController::class, 'logout'])->name('admin.logout');
+    Route::get('admin/profile',[AdminController::class, 'profile'])->name('admin.profile');
+    Route::post('admin/update/profile',[AdminController::class, 'updateProfile'])->name('admin.update.profile');
 });
+Route::get('admin/login',[AdminController::class, 'login'])->name('admin.login');
 ////////////////////////
 //////////vendor route////////
 /////////////

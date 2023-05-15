@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="{{ asset('backend') }}/assets/css/dark-theme.css" />
 	<link rel="stylesheet" href="{{ asset('backend') }}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{ asset('backend') }}/assets/css/header-colors.css" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
 	<title>MultiVendor E-commerce</title>
 </head>
 
@@ -66,10 +67,17 @@
 	<script src="{{ asset('backend') }}/assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
 	<script src="{{ asset('backend') }}/assets/plugins/jquery-knob/excanvas.js"></script>
 	<script src="{{ asset('backend') }}/assets/plugins/jquery-knob/jquery.knob.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();
 		  });
+        //   @php 
+        //   if(Session::has('message')){
+        //     Toastr::success(Session('message'));
+        //   }
+        //   @endphp
+          
 	  </script>
 	  <script src="{{ asset('backend') }}/assets/js/index.js"></script>
 	<!--app JS-->
