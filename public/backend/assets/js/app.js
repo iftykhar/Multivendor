@@ -122,3 +122,7 @@ $(function() {
 
 
 });
+import { success, error } from 'toaster';
+
+success('Success message');
+error('Error message');

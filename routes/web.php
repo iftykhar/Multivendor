@@ -37,17 +37,25 @@ Route::middleware('auth')->group(function () {
 /////////Admin Route/////////
 /////////////
 Route::middleware('auth','role:admin')->group(function(){
-    Route::get('admin/dashboard',[AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('vendor/dashboard',[AdminController::class, 'index'])->name('admin.dashboard');
     Route::post('admin/logout',[AdminController::class, 'logout'])->name('admin.logout');
     Route::get('admin/profile',[AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('admin/change/password',[AdminController::class, 'changePassword'])->name('admin.change.password');
     Route::post('admin/update/profile',[AdminController::class, 'updateProfile'])->name('admin.update.profile');
+    Route::post('admin/update/password',[AdminController::class, 'updatePassword'])->name('admin.update.password');
 });
 Route::get('admin/login',[AdminController::class, 'login'])->name('admin.login');
 ////////////////////////
 //////////vendor route////////
-/////////////
+///////////// 
 Route::middleware('auth','role:vendor')->group(function(){
     Route::get('vendor/dashboard',[VendorController::class, 'index'])->name('vendor.dashboard');
+    Route::post('vendor/logout',[VendorController::class, 'logout'])->name('vendor.logout');
+    Route::get('vendor/profile',[VendorController::class, 'profile'])->name('vendor.profile');
+    Route::get('vendor/change/password',[VendorController::class, 'changePassword'])->name('vendor.change.password');
+    Route::post('vendor/update/profile',[VendorController::class, 'updateProfile'])->name('vendor.update.profile');
+    Route::post('vendor/update/password',[VendorController::class, 'updatePassword'])->name('vendor.update.password');
 });
+Route::get('vendor/login',[VendorController::class, 'login'])->name('vendor.login');
 
 require __DIR__.'/auth.php';

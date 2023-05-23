@@ -67,16 +67,31 @@
 	<script src="{{ asset('backend') }}/assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
 	<script src="{{ asset('backend') }}/assets/plugins/jquery-knob/excanvas.js"></script>
 	<script src="{{ asset('backend') }}/assets/plugins/jquery-knob/jquery.knob.js"></script>
+	<script src="{{ asset('backend') }}/assets/js/toastr.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();
 		  });
-        //   @php 
-        //   if(Session::has('message')){
-        //     Toastr::success(Session('message'));
-        //   }
-        //   @endphp
+
+		//   let type = '{{ Session('type') }}';
+		// 	let message = '{{ Session('message') }}';
+
+		// 	switch (type) {
+		// 	case 'success':
+		// 		toastr.success(message);
+		// 		break;
+		// 	case 'info':
+		// 		toastr.info(message);
+		// 		break;
+		// 	case 'warning':
+		// 		toastr.warning(message);
+		// 		break;
+		// 	case 'danger':
+		// 		toastr.error(message);
+		// 		break;
+		// 	}
+
           
 	  </script>
 	  <script src="{{ asset('backend') }}/assets/js/index.js"></script>
