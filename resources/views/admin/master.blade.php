@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="{{ asset('backend') }}/assets/css/semi-dark.css" />
 	<link rel="stylesheet" href="{{ asset('backend') }}/assets/css/header-colors.css" />
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 	<title>MultiVendor E-commerce</title>
 </head>
 
@@ -69,6 +70,7 @@
 	<script src="{{ asset('backend') }}/assets/plugins/jquery-knob/jquery.knob.js"></script>
 	<script src="{{ asset('backend') }}/assets/js/toastr.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();
@@ -94,6 +96,25 @@
 
           
 	  </script>
+	  @if(Session::has('success'))
+//     <script>
+//         toastr.options = {
+//             "closeButton": true,
+//             "progressBar": true
+//         }
+//         toastr.success("{{ session('success') }}");
+//     </script>
+//     @endif
+
+//     @if(Session::has('error'))
+//     <script>
+//         toastr.options = {
+//             "closeButton": true,
+//             "progressBar": true
+//         }
+//         toastr.error("{{ session('error') }}");
+//     </script>
+//     @endif
 	  <script src="{{ asset('backend') }}/assets/js/index.js"></script>
 	<!--app JS-->
 	<script src="{{ asset('backend') }}/assets/js/app.js"></script>

@@ -37,7 +37,8 @@
                                                 </div>
                                                 <div class="col-sm-9 text-secondary">
                                                     
-                                                    <input name="old_password" id="old_password" type="password" placeholder="old password" class="form-control @error('old_password') is-invalid @enderror"  />
+                                                    <input name="old_password" id="old_password" type="password" placeholder="old password" class="form-control @error('old_password') is-invalid @enderror" />
+
                                                     @error('old_password')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror

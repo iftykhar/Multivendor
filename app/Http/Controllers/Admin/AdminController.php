@@ -60,7 +60,7 @@ class AdminController extends Controller
     
     public function updatePassword(Request $request){
         $request->validate([
-            'old_passwrod' => 'required',
+            'old_password' => 'required',
             'new_password' => 'required|confirmed'
         ]);
 
@@ -87,3 +87,31 @@ class AdminController extends Controller
         return back()->with('sucess',"password changed successfully");
     }
 }
+
+
+// <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+// @if(Session::has('success'))
+//     <script>
+//         toastr.options = {
+//             "closeButton": true,
+//             "progressBar": true
+//         }
+//         toastr.success("{{ session('success') }}");
+//     </script>
+//     @endif
+
+//     @if(Session::has('error'))
+//     <script>
+//         toastr.options = {
+//             "closeButton": true,
+//             "progressBar": true
+//         }
+//         toastr.error("{{ session('error') }}");
+//     </script>
+//     @endif
+
+//     @if(Session::has('warning'))
+//     <script>
+//         toa
