@@ -97,24 +97,24 @@
           
 	  </script>
 	  @if(Session::has('success'))
-//     <script>
-//         toastr.options = {
-//             "closeButton": true,
-//             "progressBar": true
-//         }
-//         toastr.success("{{ session('success') }}");
-//     </script>
-//     @endif
+     <script>
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true
+         }
+         toastr.success("{{ session('success') }}");
+     </script>
+     @endif
 
-//     @if(Session::has('error'))
-//     <script>
-//         toastr.options = {
-//             "closeButton": true,
-//             "progressBar": true
-//         }
-//         toastr.error("{{ session('error') }}");
-//     </script>
-//     @endif
+     @if(Session::has('error'))
+     <script>
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true
+         }
+         toastr.error("{{ session('error') }}");
+     </script>
+     @endif
 	  <script src="{{ asset('backend') }}/assets/js/index.js"></script>
 	<!--app JS-->
 	<script src="{{ asset('backend') }}/assets/js/app.js"></script>
