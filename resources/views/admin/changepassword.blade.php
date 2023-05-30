@@ -23,11 +23,11 @@
 							
 							<div class="col-lg-8 offset-2">
 								<div class="card">
-                                    @if(session('sucess'))
+                                    <!-- @if(session('sucess'))
                                     <div class="alert alert-sucess ">{{ session('sucess') }}</div>
                                     @elseif(session('error'))
                                     <div class="alert alert-warning text-white">{{ session('error') }}</div>
-									@endif
+									@endif -->
                                     <div class="card-body">
                                         <form action="{{route('admin.update.password')}}" method="post" enctype="multipart/form-data">
 											@csrf

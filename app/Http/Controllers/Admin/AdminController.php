@@ -84,7 +84,7 @@ class AdminController extends Controller
         //     'message' => 'password changed',
         //     'type' => 'info'
         // );
-        return back()->with('sucess',"password changed successfully");
+        return back()->with('success',"password changed successfully");
     }
 }
 
