@@ -181,6 +181,9 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    @else
+                                    <a href="{{route('login')}}"><span class="lable ml-0">Login|</span></a>
+                                    <a href="{{route('register')}}"><span class="lable ml-0">|register</span></a>
 
                                     @endauth
                                     
