@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Vendor\VendorController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\ProfileController;
@@ -24,9 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard1', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard1');
 
 Route::middleware('auth')->group(function (){
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,7 +36,7 @@ Route::middleware('auth')->group(function (){
 // User Route ///
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
-    Route::post('/dashboard/update', [UserController::class, 'updateUser'])->name('dashboard.update');
+    Route::post('/dashboard/update', [UserController::class, 'updateUser'])->name('dashboard.update'); //need to point out 
     Route::get('/dashboard/logout', [UserController::class, 'userLogout'])->name('dashboard.logout');
 });
 
@@ -53,6 +51,11 @@ Route::middleware('auth','role:admin')->group(function(){
     Route::get('admin/change/password',[AdminController::class, 'changePassword'])->name('admin.change.password');
     Route::post('admin/update/profile',[AdminController::class, 'updateProfile'])->name('admin.update.profile');
     Route::post('admin/update/password',[AdminController::class, 'updatePassword'])->name('admin.update.password');
+    Route::controller(BrandController::class)->group(function(){
+        Route::get('/Brand','index')->name('brand.add');
+        Route::post('/Brand/store','store')->name('brand.store');
+        Route::get('/Brand/manage','manage')->name('brand.manage');
+    });
 });
 Route::get('admin/login',[AdminController::class, 'login'])->name('admin.login');
 ////////////////////////

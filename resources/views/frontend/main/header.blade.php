@@ -154,7 +154,7 @@
                                 </div>
                                 <div class="header-action-icon-2">
                                     <a href="page-account.html">
-                                        <img class="svgInject" alt="Nest" src="{{ asset('frontend') }}/assets/imgs/theme/icons/icon-user.svg" />
+                                        <img class="svgInject" alt="Nest" style="border-radius: 50%;" src="{{(!empty($userData->profile_pic)) ? asset('uploads/user/'.$userData->profile_pic) : asset('uploads/user/user.jpg')}}" />
                                     </a>
                                     @auth
 
@@ -177,7 +177,7 @@
                                                 <a href="page-account.html"><i class="fi fi-rs-settings-sliders mr-10"></i>Setting</a>
                                             </li>
                                             <li>
-                                                <a href="page-login.html"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
+                                                <a href="{{route('dashboard.logout')}}"><i class="fi fi-rs-sign-out mr-10"></i>Sign out</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -427,7 +427,9 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="page-contact.html">Contact</a>
+                                        <a href="page-contact.html">
+                                            <img src="" alt="">    Contact
+                                        </a>
                                     </li>
                                 </ul>
                             </nav>

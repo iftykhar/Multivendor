@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="{{ asset('backend') }}/assets/css/header-colors.css" />
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 	<title>MultiVendor E-commerce</title>
 </head>
 
@@ -70,33 +71,40 @@
 	<script src="{{ asset('backend') }}/assets/plugins/jquery-knob/jquery.knob.js"></script>
 	<script src="{{ asset('backend') }}/assets/js/toastr.js"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();
 		  });
-
-		//   let type = '{{ Session('type') }}';
-		// 	let message = '{{ Session('message') }}';
-
-		// 	switch (type) {
-		// 	case 'success':
-		// 		toastr.success(message);
-		// 		break;
-		// 	case 'info':
-		// 		toastr.info(message);
-		// 		break;
-		// 	case 'warning':
-		// 		toastr.warning(message);
-		// 		break;
-		// 	case 'danger':
-		// 		toastr.error(message);
-		// 		break;
-		// 	}
-
           
 	  </script>
-	  @if(Session::has('success'))
+	<!-- @if(Session::has('message'))
+	  <script>
+		
+		let type = {{ Session::get('type') }};
+			// let message = '{{ Session('message') }}';
+
+			switch (type) {
+			case 'success':
+				toastr.success("{{ session::get('message') }}");
+				break;
+			case 'info':
+				toastr.info("{{ session::get('message') }}");
+				break;
+			case 'warning':
+				toastr.warning("{{ session::get('message') }}");
+				break;
+			case 'danger':
+				toastr.error("{{ session::get('message') }}");
+				break;
+			}
+		
+		
+	  </script>
+	  @endif
+-->
+	@if(Session::has('success'))
      <script>
          toastr.options = {
              "closeButton": true,
@@ -115,6 +123,24 @@
          toastr.error("{{ session('error') }}");
      </script>
      @endif
+     @if(Session::has('info'))
+     <script>
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true
+         }
+         toastr.error("{{ session('error') }}");
+     </script>
+     @endif
+     @if(Session::has('warning'))
+     <script>
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true
+         }
+         toastr.error("{{ session('error') }}");
+     </script>
+     @endif 
 	  <script src="{{ asset('backend') }}/assets/js/index.js"></script>
 	<!--app JS-->
 	<script src="{{ asset('backend') }}/assets/js/app.js"></script>
